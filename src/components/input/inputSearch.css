@@ -1,0 +1,19 @@
+.cont-input {
+  display: flex;
+  gap: 2px;
+}
+.input-search {
+  height: 2rem;
+  border-radius: 5px;
+  border: 0;
+  padding: 4px;
+}
+.button {
+  background-color: rgb(0, 0, 0);
+  border: 0;
+  width: 2rem;
+  border-radius: 4px;
+}
+.button ion-icon {
+  color: rgb(255, 255, 255);
+}

@@ -1,0 +1,19 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color:  rgb(255, 255, 255);
+}
+div {
+  color: rgb(255, 255, 255);
+}
+button,
+ion-icon {
+  cursor: pointer;
+}
+ion-icon {
+  color: rgb(255, 255, 255);
+}

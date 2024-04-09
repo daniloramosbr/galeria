@@ -1,0 +1,17 @@
+.cont-header {
+  height: 3.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(0, 0, 204);
+  padding-left: 8px;
+  padding-right: 8px;
+  cursor: pointer;
+}
+.img-ion ion-icon {
+  font-size: 40px;
+}
+.img-ion {
+  display: flex;
+  gap: 5px;
+}
