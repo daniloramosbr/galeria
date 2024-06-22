@@ -1,0 +1,14 @@
+.cont-homeone {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  cursor: pointer;
+  transition: all 0.3s linear;
+  webkit-box-shadow: 10px 10px 5px -11px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 5px -11px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 5px -11px rgba(0,0,0,0.75);
+
+}
+.cont-homeone:hover {
+  transform: scale(1.1);
+}

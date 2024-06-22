@@ -1,16 +1,15 @@
-import { useContext, useState } from "react"
-import "./inputSearch.css"
+import { useState } from "react"
 import { useNavigate } from "react-router-dom"
-import { ContextJsx } from "../../context/context"
+import "./inputSearch.scss"
+
 
 export default function InputSearch() {
 
   const navigate = useNavigate()
 
-const [search, setSearch] = useState("")
-const {setPesq} = useContext(ContextJsx)
+const [search, setSearch] = useState("")        //input de pesquisa
 
-const HandleChange = (event) => {
+const HandleChange = (event:any) => {
   setSearch(event.target.value);
 }
 
@@ -23,10 +22,9 @@ const HandleChange = (event) => {
 
       <button className="button" onClick={()=> {
       if (!search) {
-        return
+        return alert('insira algo para pesquisar')
       }
-      setPesq(search)
-       navigate(`/search?q=${search}`)
+       navigate(`/search/${search}`)
        setSearch('')
       }}>
         <ion-icon name="search-outline"></ion-icon>

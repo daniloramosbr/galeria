@@ -8,9 +8,9 @@ export default function RoutesApp() {
   return (
   <BrowserRouter>
   <Routes>
-  <Route path="/galeria" element={<Home/>} />
+  <Route path="/galeria/:id?" element={<Home/>} />
   <Route path="/info" element={<Info/>} />
-  <Route path="/search" element={<Search/>} />
+  <Route path="/search/:search" element={<Search/>} />
   </Routes>
   </BrowserRouter>
   )

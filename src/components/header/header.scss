@@ -1,11 +1,10 @@
 .cont-header {
-  height: 3.5rem;
+  height: 5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: rgb(0, 0, 204);
-  padding-left: 8px;
-  padding-right: 8px;
+ padding:  0.5rem 0.5rem 0.5rem;
   cursor: pointer;
 }
 .img-ion ion-icon {
@@ -14,4 +13,14 @@
 .img-ion {
   display: flex;
   gap: 5px;
+  transition: all 0.2s linear;
+}
+.img-ion:hover {
+  transform: scale(1.05);
+}
+@media (max-width: 600px) {
+  .cont-header {
+   flex-direction: column;
+   height: 7rem;
+  }
 }

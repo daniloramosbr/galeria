@@ -1,9 +1,15 @@
-import "./homeone.css"
+import "./homeone.scss"
 import { useNavigate } from "react-router-dom";
 import { ContextJsx } from "../../context/context";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 
-export default function Homeone({img, creator}) {
+interface info {
+  img: string;
+  creator: string;
+  alt: string;
+}
+
+export default function Homeone({img, creator, alt}: info) {
 
   const navigate = useNavigate()
     const {photo, setPhoto} = useContext(ContextJsx)
@@ -12,11 +18,11 @@ export default function Homeone({img, creator}) {
     <div className="cont-homeone" onClick={(()=>{
       let res = {
         url: img,
-        creator: creator
+        creator: creator,
+        desc: alt
       }
       navigate('/info')
       setPhoto(res)
-      console.log(photo)
       
     })}>
       <img src={img}/>
