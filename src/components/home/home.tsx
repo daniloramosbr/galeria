@@ -48,7 +48,7 @@ export default function Home() {
     <div className="container-home">
       <Header />
       <main className="main-home">
-        {photos ? (
+        {photos.length >= 1 ? (
           photos.map((photo: any) => {
             return (
               <Homeone
