@@ -20,7 +20,6 @@ export default function Search() {
           },
         });
         setPhotos(res.data.photos);
-        console.log(res.data);
       } catch (error) {
         console.log(error);
       }
@@ -29,12 +28,14 @@ export default function Search() {
     GetApi();
   }, [search]);
 
+  console.log()
+
   return (
     <div className="container-home">
       <Header />
-     <h2 className="pesq">
+     {photos.length > 1 &&  <h2 className="pesq">
       PESQUISANDO POR: {search}
-     </h2>
+     </h2>}
       <main className="main-home">
         {photos ? (
           photos.map((photo: any) => {
@@ -50,6 +51,9 @@ export default function Search() {
         ) : (
           <h1>Carregando...</h1>
         )}
+       {photos.length == 0 &&  <h3 className="none">
+          NENHUM RESULTADO ENCONTRADO PARA: {search}
+        </h3>  }
       </main>
 
     </div>

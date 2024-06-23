@@ -3,8 +3,11 @@ import Header from "../header/header";
 import Homeone from "../homeone/homeone";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Home() {
+
+  const navigate = useNavigate();
   const [photos, setPhotos] = useState([]); //guarda dados da api
   const [page, setPage] = useState(1);
 
@@ -19,7 +22,6 @@ export default function Home() {
           },
         });
         setPhotos(res.data.photos);
-        console.log(res.data);
       } catch (error) {
         console.log(error);
       }
@@ -30,13 +32,14 @@ export default function Home() {
 
   const handlePreviousPage = () => {
     setPage((prevPage) => prevPage - 1);
+    navigate(`/galeria/${page-1}`)
   };
 
   const handleNextPage = () => {
     setPage((nextPage) => nextPage + 1);
+    navigate(`/galeria/${page+1}`)
   };
 
-console.log(page)
   return (
     <div className="container-home">
       <Header />
@@ -53,13 +56,15 @@ console.log(page)
             );
           })
         ) : (
-          <h1>Carregando...</h1>
+          <div>
+            <div className="custom-loader"></div>
+          </div>
         )}
       </main>
-      <div className="pag">
+     {photos &&  <div className="pag">
       <button onClick={handlePreviousPage}><ion-icon name="chevron-back-outline"></ion-icon> ANTERIOR</button>
       <button onClick={handleNextPage}>PRÓXIMA <ion-icon name="chevron-forward-outline"></ion-icon></button>
-        </div>
+        </div>}
     </div>
   );
 }
