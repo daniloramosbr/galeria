@@ -2,6 +2,8 @@
 
 Projeto front-end de uma galeria de fotos
 
+<img src="/public/galeria.png" alt="url">
+
 ## Funcionalidades
 
 - Informações de fotos
