@@ -31,6 +31,10 @@ export default function Home() {
   }, [page]);
 
   const handlePreviousPage = () => {
+
+    if (page == 1) {
+      return;
+    }
     setPage((prevPage) => prevPage - 1);
     navigate(`/galeria/${page-1}`)
   };
